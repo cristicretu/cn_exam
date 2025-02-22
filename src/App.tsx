@@ -1,14 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  ChevronLeft,
-  Moon,
-  Sun,
-  Settings2,
-  History,
-  HelpCircle,
-  Search,
-} from "lucide-react";
+import { ChevronLeft, Moon, Sun, Settings2, HelpCircle } from "lucide-react";
 import "./ios.css";
 import "./App.css";
 import * as Dialog from "@radix-ui/react-dialog";
@@ -18,11 +10,13 @@ import { getExplanation } from "./utils/ai";
 import ReactMarkdown from "react-markdown";
 import { CommandPalette } from "./components/CommandPalette";
 import { questionCache } from "./utils/questionCache";
+import questionsData from "../public/questions.json";
 
 interface Question {
   question: string;
   answers: string[];
   correct: string; // Can be like "a", "bc", "ad", or a direct answer
+  image?: string; // Optional image URL
 }
 
 function App() {
@@ -68,19 +62,25 @@ function App() {
         // Try to get questions from cache first
         const cachedQuestions = await questionCache.getCachedQuestions();
         if (cachedQuestions) {
+          console.log("Using cached questions:", cachedQuestions.length);
           setQuestions(cachedQuestions);
           return;
         }
 
-        // If not in cache, fetch from file
-        const response = await fetch("/questions.json");
-        const data = await response.json();
-        setQuestions(data);
+        // If not in cache, use the imported data
+        console.log("Using imported questions:", questionsData.length);
+        setQuestions(questionsData);
 
         // Cache the questions for future use
-        await questionCache.cacheQuestions(data);
-      } catch (error) {
+        await questionCache.cacheQuestions(questionsData);
+      } catch (error: unknown) {
         console.error("Error loading questions:", error);
+        if (error instanceof Error) {
+          console.error("Error details:", {
+            message: error.message,
+            stack: error.stack,
+          });
+        }
       }
     };
 
@@ -763,7 +763,11 @@ function App() {
                 <p className="text-[22px] mb-8">{currentQuestion.question}</p>
 
                 {currentQuestion.image && (
-                    <img src={currentQuestion.image} alt="Question Image" className="w-full h-auto rounded-lg shadow-md mb-8" />
+                  <img
+                    src={currentQuestion.image.replace("public/", "/")}
+                    alt="Question Image"
+                    className="w-full h-auto rounded-lg shadow-md mb-8"
+                  />
                 )}
 
                 <div className="space-y-3">

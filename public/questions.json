@@ -1018,7 +1018,7 @@
     "question": "Which of the following affirmations about TCP is not true?",
     "answers": [
       "Client process must first be running",
-      "Server must have created a socket that welcomes client’s contact",
+      "Server must have created a socket that welcomes client's contact",
       "Allows the server to talk with multiple clients",
       "Source port numbers are used to distinguish clients"
     ],
@@ -2429,7 +2429,7 @@
     "correct": "c"
   },
   {
-    "question": "A router is typically connected to at least two networks, commonly two … or … or a LAN and its ISP’S network.",
+    "question": "A router is typically connected to at least two networks, commonly two … or … or a LAN and its ISP'S network.",
     "answers": [
       "LOCAL AREA NETWORKS(LANs), WIDE AREA NETWORKS(WANs)",
       "VIRTUAL PRIVATE NETWORKS(VPNs), METROPOLITAN AREA NETWORKS(MANs)"

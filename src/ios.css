@@ -33,12 +33,7 @@
   }
 }
 
-@font-face {
-  font-family: "SF Pro Text";
-  src: url("https://v0.dev/sf-pro-text.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-}
+
 
 /* Apply SF Pro Text font globally */
 body {
