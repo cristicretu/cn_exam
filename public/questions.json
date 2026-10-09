@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "question": "Given the network diagram bellow and the routing tables for routers R1, R2, R3 - provide the first 4 IP addresses displayed by executing on host S - traceroute 10.0.8.5 ! (addresses will be written separated only by comas with no spaces or other characters)",
     "answers": [],
@@ -640,16 +640,6 @@
     "correct": "a"
   },
   {
-    "question": "Which of the following is not a characteristic of the IP protocol?",
-    "answers": [
-      "Is a connection-oriented protocol.",
-      "It defines the Internet addressing system.",
-      "It affects packet routing.",
-      "Is considered an unreliable protocol."
-    ],
-    "correct": "a"
-  },
-  {
     "question": "The maximum number of actual hosts for a class C network is",
     "answers": [],
     "correct": "254"
@@ -663,16 +653,6 @@
     "question": "Represent /26 in doted decimal format:",
     "answers": [],
     "correct": "255.255.255.192"
-  },
-  {
-    "question": "Which of the following is not a characteristic of the IP protocol?",
-    "answers": [
-      "It affects packet routing",
-      "Is considered an unreliable protocol",
-      "Is a connection-oriented protocol",
-      "It defines the Internet addressing system"
-    ],
-    "correct": "c"
   },
   {
     "question": "Having more than one DHCP server on the same subnet of a network is:",
@@ -880,16 +860,6 @@
     "correct": "a"
   },
   {
-    "question": "Which of the following is true about the IP address 10.16.3.65/23?",
-    "answers": [
-      "The subnet address is 10.16.3.0 255.255.254.0",
-      "The last valid host address in the subnet is 10.16.2.254 255.255.254.0",
-      "The broadcast address of the subnet is 10.16.3.0 255.255.254.0",
-      "The lowest host address in the subnet is 10.16.2.1 255.255.254.0"
-    ],
-    "correct": "d"
-  },
-  {
     "question": "Which of the following are valid subnet addresses?",
     "answers": [
       "177.91.107.0, 177.92.107.97, 177.92.107.144",
@@ -1078,16 +1048,6 @@
       "Millions of bytes configured in a big cluster that can be easily transferred"
     ],
     "correct": "b"
-  },
-  {
-    "question": "ARP can be used for...",
-    "answers": [
-      "Mapping network addresses to physical (MAC) addresses",
-      "Mapping public virtual addresses to private IP addresses",
-      "Publishing websites to the internet",
-      "Sending emails very fast"
-    ],
-    "correct": "a"
   },
   {
     "question": "TCP, UDP, and SCTP are part of...",
@@ -1304,16 +1264,6 @@
     "correct": "b"
   },
   {
-    "question": "Which of the following describes 'big endian'?",
-    "answers": [
-      "Most significant byte first",
-      "Most significant byte last",
-      "Least significant byte in the middle",
-      "Most significant byte in the middle"
-    ],
-    "correct": "a"
-  },
-  {
     "question": "Which of the following describes 'little endian'?",
     "answers": [
       "Least significant byte first",
@@ -1511,11 +1461,6 @@
     "correct": "a"
   },
   {
-    "question": "How long is an IPv4 address?",
-    "answers": ["4 bytes", "32 bytes", "16 bytes", "8 bytes"],
-    "correct": "a"
-  },
-  {
     "question": "What does TLD stand for?",
     "answers": [
       "Total Level Domain",
@@ -1637,21 +1582,6 @@
     "correct": "a"
   },
   {
-    "question": "Which of the following IP sets belong to 209.220.186.12/255.255.255.252 ip class?",
-    "answers": [
-      "209.220.186.12, 209.220.186.13, 209.220.186.14, 209.220.186.15",
-      "209.220.186.13, 209.220.186.14, 209.220.186.15, 209.220.186.16",
-      "209.220.186.12, 209.220.186.13, 209.220.186.14, 209.220.186.15, 209.220.186.16, 209.220.186.17, 209.220.186.14, 209.220.186.18",
-      "209.220.186.10, 209.220.186.11, 209.220.186.12, 209.220.186.13, 209.220.186.14, 209.220.186.15, 209.220.186.16, 209.220.186.17"
-    ],
-    "correct": "a"
-  },
-  {
-    "question": "How many bits of zero does the following netmask have? 255.255.255.248",
-    "answers": ["2 bits", "3 bits", "4 bits", "8 bits"],
-    "correct": "b"
-  },
-  {
     "question": "Which is the correct binary representation of the following netmask? 255.255.255.128",
     "answers": [
       "11111111 11111111 11111111 10000000",
@@ -1722,16 +1652,6 @@
       "Both answers involve NAT."
     ],
     "correct": "c"
-  },
-  {
-    "question": "Are MAC addresses guaranteed to be unique?",
-    "answers": [
-      "No, buying the same type of a network adapter twice (from an online store) means you get the same MAC address.",
-      "No, the MAC address is software related.",
-      "Depends on the network adapter you have.",
-      "Yes, because MAC addresses are burned into the ROM of the network adapter."
-    ],
-    "correct": "d"
   },
   {
     "question": "What is a private IP address?",
@@ -2268,11 +2188,6 @@
     "correct": "b"
   },
   {
-    "question": "SOCK_DGRAM is used for UDP connections.",
-    "answers": ["True", "False"],
-    "correct": "a"
-  },
-  {
     "question": "The optical fiber cable theoretically has unlimited bandwidth.",
     "answers": ["True", "False"],
     "correct": "a"
@@ -2336,16 +2251,6 @@
       "Internet Layer"
     ],
     "correct": "a"
-  },
-  {
-    "question": "TCP Header contains the following entries:",
-    "answers": [
-      "Source Port, Destination Port, Route ID, Checksum",
-      "Source Mac, Destination Mac, Connection object, Checksum, Data hash",
-      "Source IP, Destination IP, Pointer to MAC address, Connection unique identifier, Router IP, NAT tables",
-      "Source Port, Destination Port, Sequence Number, Acknowledgement Number, Flags, Data Offset, Checksum, Urgent Pointer"
-    ],
-    "correct": "d"
   },
   {
     "question": "The network address cannot be calculated using the broadcast address and the netmask",
@@ -2528,31 +2433,6 @@
     "question": "A switch can’t transport IP packets.",
     "answers": ["true", "false"],
     "correct": "b"
-  },
-  {
-    "question": "A hub doesn’t understand MAC addresses.",
-    "answers": ["true", "false"],
-    "correct": "a"
-  },
-  {
-    "question": "A hub is more performant than a switch.",
-    "answers": ["true", "false"],
-    "correct": "b"
-  },
-  {
-    "question": "A hub doesn’t have many ports.",
-    "answers": ["true", "false"],
-    "correct": "b"
-  },
-  {
-    "question": "A hub understands MAC addresses.",
-    "answers": ["true", "false"],
-    "correct": "b"
-  },
-  {
-    "question": "A hub has many ports.",
-    "answers": ["true", "false"],
-    "correct": "a"
   },
   {
     "question": "A hub doesn’t understand MAC addresses.",
@@ -2830,11 +2710,6 @@
     "correct": "a"
   },
   {
-    "question": "SMTP is not on the Link Layer.",
-    "answers": ["true", "false"],
-    "correct": "a"
-  },
-  {
     "question": "DNS is on the Transport Layer.",
     "answers": ["true", "false"],
     "correct": "b"
@@ -3065,11 +2940,6 @@
     "correct": "a"
   },
   {
-    "question": "The address 193.255.20.0 can be a network address.",
-    "answers": ["true", "false"],
-    "correct": "a"
-  },
-  {
     "question": "The address 192.168.2.32/27 can be a network address.",
     "answers": ["true", "false"],
     "correct": "a"
@@ -3218,11 +3088,6 @@
     "question": "172.31.255.255 is a private IP address.",
     "answers": ["true", "false"],
     "correct": "a"
-  },
-  {
-    "question": "172.31.255.255 is not a private IP address.",
-    "answers": ["true", "false"],
-    "correct": "b"
   },
   {
     "question": "Not all the IP addresses from the class 10.0.0.0/8 are private.",
@@ -3790,11 +3655,6 @@
     "correct": "a"
   },
   {
-    "question": "The recvfrom() call sends data to the UDP server.",
-    "answers": ["true", "false"],
-    "correct": "b"
-  },
-  {
     "question": "The recvfrom() call sends data to the TCP server.",
     "answers": ["true", "false"],
     "correct": "b"
@@ -4070,11 +3930,6 @@
     "correct": "a"
   },
   {
-    "question": "There can’t exist computers with the address 192.168.1.0.",
-    "answers": ["true", "false"],
-    "correct": "b"
-  },
-  {
     "question": "The network board acts as a physical interface between the computer and the network cable.",
     "answers": ["true", "false"],
     "correct": "b"
@@ -4208,16 +4063,6 @@
     "question": "HTTP transfers encrypted data.",
     "answers": ["true", "false"],
     "correct": "b"
-  },
-  {
-    "question": "LAN is a global network.",
-    "answers": ["true", "false"],
-    "correct": "b"
-  },
-  {
-    "question": "LAN is not a global network.",
-    "answers": ["true", "false"],
-    "correct": "a"
   },
   {
     "question": "A network board can have only one IP address.",

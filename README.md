@@ -1,75 +1,67 @@
-# Quiz Application
+# cn_exam
 
-This is a quiz application that asks the user a series of multiple choice questions, for Computer Networks exam. Can be used either as a Python script, or a React app.
+Practice app for the Computer Networks final at UBB. About 670 questions from the Moodle exam bank.
 
-##### IMPORTANT NOTE: Some answers may not be correct, so please check them while using this application, and if you find any mistakes, please let me know.
+Live: https://cn-exam-sand.vercel.app
 
-## How it works
+Some marked answers are probably wrong. If you find one, report it or fix it (see below).
 
-The application starts by welcoming the user and explaining how the quiz works. The user is then asked how many questions they would like to answer. They can choose to answer all questions or specify a number.
+## Modes
 
-The questions are stored in a JSON file named `questions.json`. This file is read at the start of the program and the questions are stored in a list. Feel free to add more questions to the file.
+- **Practice**: all questions, shuffled, feedback after each answer.
+- **Exam**: N random questions (default 30), optional countdown timer, no feedback until you finish, then a full review.
+- **Mistakes**: questions you got wrong last time and have not answered right since.
+- **Unseen**: questions you have never answered.
 
-The application then enters a loop where it asks the user the specified number of questions. Before each question, the program waits for 1 second. The questions are selected randomly from the list of questions.
+Answer options are shuffled every session. Progress (per question: times seen, last result) and the current session are kept in your browser's localStorage, so a reload resumes where you left off. Settings has a reset button.
 
-The user's score is kept track of throughout the quiz.
+Optional: paste your own Gemini API key in settings to get an "explain" button after answering. The key stays in your browser and is only sent to Google when you click it.
 
-## How to run
+## Keyboard
 
-To run the application, simply execute the `main.py` file with a Python interpreter.
+| key | action |
+| --- | --- |
+| `1`-`9` | toggle option a-i |
+| `enter` | submit, then next |
+| `up` / `down` | move focus between options |
+| `space` | toggle the focused option |
+| `left` / `right` | previous / next question |
+| `cmd k` / `ctrl k` | search all questions and see their answers |
+| `?` | shortcut sheet |
+| `esc` | close dialogs |
+
+## Fixing a wrong answer
+
+All questions live in `public/questions.json`:
+
+```json
+{
+  "question": "How many bits of zero does the following netmask have? 255.255.255.248",
+  "answers": ["3", "4", "8", "2"],
+  "correct": "a"
+}
+```
+
+- `correct` is the letter(s) of the right options in the original order (`"a"`, `"bc"`).
+- Free-text questions have `"answers": []` and the expected text in `correct`. Matching ignores case, extra spaces and spaces around commas.
+- Optional `image` (path under `public/`) and `correction` (note shown after answering).
+
+Edit the file and open a PR. Or use the "wrong answer in the dataset?" link on any question to open an issue.
+
+## Run locally
 
 ```bash
-python main.py
+pnpm i && pnpm dev
 ```
 
-## How to run the React app
+`pnpm test` runs the grading tests, `pnpm build` makes the production build.
 
-To run the React app, you need to install dependencies using `npm`, `yarn` or `pnpm`
+## Python CLI
 
-```commandline
-npm install
-```
-
-Then run the React app, simply execute the `npm run dev` or `yarn dev` or `pnpm dev` (alternatively `pnpm run dev`).
+Same questions in the terminal:
 
 ```bash
-npm run dev
+python3 main.py
 ```
 
-If you want to have Gemini explain the answers to you, you can set the `VITE_GEMINI_API_KEY` inside a `.env` file.
-
-```bash
-VITE_GEMINI_API_KEY=your_api_key_here
-```
-
-### How to get a Google Gemini API Key
-
-Visit [Google AI Studio](https://aistudio.google.com/) and login into your Google account
-
-Click on Get API key
-
-![Get API key](https://imgur.com/UKWxJ5p.jpg)
-
-Create a new API key
-
-![Create API key](https://imgur.com/ooVIaGT.jpg)
-
-Continue with the form, then copy your API keys.
-
-**[Optional]** If you want to test your API key, you can use the command below, where you will insert your generated api key. If it works, you can freely use it in the project
-
-```bash
-curl "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=INSERTKEYHERE" \
-    -H 'Content-Type: application/json' \
-    -X POST \
-    -d '{
-      "contents": [{
-        "parts":[{"text": "Write me back "1234" and a random thought."}]
-        }]
-       }'
-```
-
-## Requirements
-
-- Python 3.6 or higher
-- Node.js 18 or higher (for the React app)
+Type the letters of your answer (`a`, `bd`) or the text for free-text questions.

@@ -1,8 +1,9 @@
-# import questions from questions.json
+# CLI quiz over public/questions.json (same data as the web app)
 import json
 import os
 import platform
 import random
+import re
 import subprocess
 import time
 
@@ -22,6 +23,18 @@ def open_image(image_path):
         print(f"Error opening image: {e}")
 
 
+def normalize(text):
+    text = re.sub(r'\s+', ' ', text.strip().lower())
+    return re.sub(r'\s*,\s*', ',', text)
+
+
+def is_correct(user_answer, q):
+    if q['answers']:
+        picked = sorted(set(user_answer.replace(' ', '').replace(',', '').lower()))
+        return picked == sorted(q['correct'].lower())
+    return normalize(user_answer) == normalize(q['correct'])
+
+
 class bcolors:
     CORRECT = '\033[92m'
     INCORRECT = '\033[91m'
@@ -36,7 +49,8 @@ print(
 print("For the answers that are not multiple choice, write the answer you think is correct")
 # store the questions in a dictionary
 questions = []
-with open('questions.json', 'r', encoding='utf-8-sig') as f:
+QUESTIONS_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'public', 'questions.json')
+with open(QUESTIONS_PATH, 'r', encoding='utf-8-sig') as f:
     for q in json.load(f):
         questions.append(q)
 
@@ -71,7 +85,7 @@ while True:
         #if the question contains an image, it will display
         if 'image' in q:
             print(bcolors.BLUE + "Image opening..." + bcolors.NORMAL)
-            open_image(q['image'])
+            open_image(os.path.join(os.path.dirname(QUESTIONS_PATH), q['image'].lstrip('/')))
 
         # for each answer, display the answer
         if q['answers'] != []:
@@ -83,7 +97,7 @@ while True:
         # get user input
         user_answer = input("Your answer: ")
         # check if user input is correct
-        if user_answer == q['correct']:
+        if is_correct(user_answer, q):
             print(bcolors.CORRECT + "Correct!")
             user_score += 1
         else:
