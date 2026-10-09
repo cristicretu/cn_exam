@@ -186,6 +186,9 @@ export default function App() {
             <a href="https://cristicretu.github.io/ubb" target="_blank" rel="noreferrer">
               ubb notes
             </a>
+            <a href="https://ubb-schedule.vercel.app" target="_blank" rel="noreferrer">
+              timetable in your calendar
+            </a>
           </footer>
         }
       />
